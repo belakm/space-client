@@ -1,4 +1,10 @@
 import { Link, Navigate, useRoutes } from 'react-router-dom';
+import {
+  Balances,
+  ClaimPlanet,
+  ClaimResources,
+  CreatePlayer,
+} from './components/Example';
 
 export function AppRoutes() {
   return useRoutes([
@@ -9,6 +15,25 @@ export function AppRoutes() {
         <div>
           <p>Home page content</p>
           <Link to="/page-1">Page 1</Link>
+          <hr />
+          <Balances />
+          <ul
+            style={{
+              textAlign: 'center',
+              padding: '2em',
+              listStyle: 'none',
+            }}
+          >
+            <li style={{ marginBottom: '.7em' }}>
+              <CreatePlayer />
+            </li>
+            <li style={{ marginBottom: '.7em' }}>
+              <ClaimResources />
+            </li>
+            <li>
+              <ClaimPlanet />
+            </li>
+          </ul>
         </div>
       ),
     },

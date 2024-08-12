@@ -1,0 +1,5892 @@
+{
+  "address": "BKbyqruPEXwvSfiQZ9hLZSich3heeU3ZBkrM69KQ276f",
+  "metadata": {
+    "name": "space_castle",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "fleet_attack",
+      "docs": [
+        "Attack a fleet or planet at (x, y)"
+      ],
+      "discriminator": [
+        35,
+        167,
+        113,
+        117,
+        245,
+        251,
+        150,
+        115
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "fleet",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  108,
+                  101,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "fleet_target",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  108,
+                  101,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "target_x"
+              },
+              {
+                "kind": "arg",
+                "path": "target_y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_cache",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  99,
+                  97,
+                  99,
+                  104,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_cache_target",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  99,
+                  97,
+                  99,
+                  104,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "x",
+          "type": "u16"
+        },
+        {
+          "name": "y",
+          "type": "u16"
+        },
+        {
+          "name": "target_x",
+          "type": "u16"
+        },
+        {
+          "name": "target_y",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "fleet_move",
+      "docs": [
+        "Move a fleet to (x, y)"
+      ],
+      "discriminator": [
+        0,
+        43,
+        130,
+        83,
+        146,
+        102,
+        220,
+        86
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "fleet_from",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  108,
+                  101,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "fleet_to",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  108,
+                  101,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "move_to_x"
+              },
+              {
+                "kind": "arg",
+                "path": "move_to_y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "x",
+          "type": "u16"
+        },
+        {
+          "name": "y",
+          "type": "u16"
+        },
+        {
+          "name": "move_x",
+          "type": "u16"
+        },
+        {
+          "name": "move_y",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "fleet_new",
+      "docs": [
+        "",
+        "Fleet",
+        "",
+        "Create a new fleet at (x, y)"
+      ],
+      "discriminator": [
+        105,
+        81,
+        165,
+        157,
+        45,
+        111,
+        39,
+        192
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "planet_holding",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  110,
+                  101,
+                  116,
+                  95,
+                  104,
+                  111,
+                  108,
+                  100,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "fleet",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  108,
+                  101,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "_x",
+          "type": "u16"
+        },
+        {
+          "name": "_y",
+          "type": "u16"
+        },
+        {
+          "name": "template",
+          "type": {
+            "array": [
+              {
+                "option": {
+                  "defined": {
+                    "name": "SquadronBlueprint"
+                  }
+                }
+              },
+              9
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "market_pool_create",
+      "docs": [
+        "Market pool",
+        "",
+        "Market pool - Create the market liquidity pool"
+      ],
+      "discriminator": [
+        190,
+        9,
+        145,
+        63,
+        26,
+        90,
+        32,
+        31
+      ],
+      "accounts": [
+        {
+          "name": "market_pool",
+          "docs": [
+            "Liquidity Pool"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  114,
+                  107,
+                  101,
+                  116,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "payer",
+          "docs": [
+            "Rent payer"
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "System Program: Required for creating the Liquidity Pool"
+          ],
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "market_pool_fund",
+      "docs": [
+        "Market pool - Provide liquidity to the pool by funding it with some asset"
+      ],
+      "discriminator": [
+        232,
+        212,
+        84,
+        21,
+        136,
+        105,
+        71,
+        236
+      ],
+      "accounts": [
+        {
+          "name": "market_pool",
+          "docs": [
+            "Liquidity Pool"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  114,
+                  107,
+                  101,
+                  116,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "docs": [
+            "The mint account for the asset being deposited into the pool"
+          ]
+        },
+        {
+          "name": "resource_authority",
+          "docs": [
+            "RESOURCE AUTH"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "pool_token_account",
+          "docs": [
+            "The Liquidity Pool's token account for the asset being deposited into",
+            "the pool"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "market_pool"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "payer_token_account",
+          "docs": [
+            "The payer's - or Liquidity Provider's - token account for the asset",
+            "being deposited into the pool"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "payer"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "System Program: Required for creating the Liquidity Pool's token account",
+            "for the asset being deposited into the pool"
+          ],
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "Token Program: Required for transferring the assets from the Liquidity",
+            "Provider's token account into the Liquidity Pool's token account"
+          ],
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "associated_token_program",
+          "docs": [
+            "Associated Token Program: Required for creating the Liquidity Pool's",
+            "token account for the asset being deposited into the pool"
+          ],
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "pay_in_resource",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "market_pool_mint_to",
+      "docs": [
+        "Market pool - Provide liquidity to the pool by funding it with some asset"
+      ],
+      "discriminator": [
+        65,
+        110,
+        25,
+        252,
+        215,
+        199,
+        29,
+        60
+      ],
+      "accounts": [
+        {
+          "name": "market_pool",
+          "docs": [
+            "Market Pool"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  114,
+                  107,
+                  101,
+                  116,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "docs": [
+            "The mint account for the asset being deposited into the pool"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_token_account",
+          "docs": [
+            "The Market Pool's token account for the asset being deposited into",
+            "the pool"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "market_pool"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "System Program: Required for creating the Market Pool's token account",
+            "for the asset being deposited into the pool"
+          ],
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "Token Program: Required for transferring the assets from the Liquidity",
+            "Provider's token account into the Market Pool's token account"
+          ],
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "associated_token_program",
+          "docs": [
+            "Associated Token Program: Required for creating the Market Pool's",
+            "token account for the asset being deposited into the pool"
+          ],
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "market_pool_swap",
+      "docs": [
+        "Market pool - swap assets in the Market pool"
+      ],
+      "discriminator": [
+        166,
+        76,
+        148,
+        178,
+        40,
+        6,
+        199,
+        185
+      ],
+      "accounts": [
+        {
+          "name": "pool",
+          "docs": [
+            "Market Pool"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  114,
+                  107,
+                  101,
+                  116,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "docs": [
+            "RESOURCE AUTH"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "receive_mint",
+          "docs": [
+            "The mint account for the asset the user is requesting to receive in",
+            "exchange"
+          ]
+        },
+        {
+          "name": "pool_receive_token_account",
+          "docs": [
+            "The Market Pool's token account for the mint of the asset the user is",
+            "requesting to receive in exchange (which will be debited)"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "pool"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "receive_mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "payer_receive_token_account",
+          "docs": [
+            "The user's token account for the mint of the asset the user is",
+            "requesting to receive in exchange (which will be credited)"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pay_mint",
+          "docs": [
+            "The mint account for the asset the user is proposing to pay in the swap"
+          ]
+        },
+        {
+          "name": "pool_pay_token_account",
+          "docs": [
+            "The Market Pool's token account for the mint of the asset the user is",
+            "proposing to pay in the swap (which will be credited)"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "pool"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pay_mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "payer_pay_token_account",
+          "docs": [
+            "The user's token account for the mint of the asset the user is",
+            "proposing to pay in the swap (which will be debited)"
+          ],
+          "writable": true
+        },
+        {
+          "name": "payer",
+          "docs": [
+            "The authority requesting to swap (user)"
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "Token Program: Required for transferring the assets between all token",
+            "accounts involved in the swap"
+          ],
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount_to_swap",
+          "type": "u64"
+        },
+        {
+          "name": "pay_in_resource",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "mint_chemical",
+      "docs": [
+        "Mint Chemicals to X Account"
+      ],
+      "discriminator": [
+        187,
+        186,
+        217,
+        155,
+        61,
+        28,
+        196,
+        73
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "payer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mint_crystal",
+      "docs": [
+        "Mint Crystal to X Account"
+      ],
+      "discriminator": [
+        153,
+        42,
+        168,
+        45,
+        84,
+        9,
+        228,
+        154
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "payer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mint_fuel",
+      "docs": [
+        "Mint Fuel to X Account"
+      ],
+      "discriminator": [
+        191,
+        245,
+        76,
+        54,
+        243,
+        13,
+        175,
+        232
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "payer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mint_igt",
+      "docs": [
+        "Mint IGT to X Account"
+      ],
+      "discriminator": [
+        151,
+        178,
+        21,
+        56,
+        123,
+        109,
+        13,
+        151
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  105,
+                  103,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "payer"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mint_init_chemical",
+      "docs": [
+        "Create Chemical Mint"
+      ],
+      "discriminator": [
+        42,
+        103,
+        78,
+        106,
+        56,
+        255,
+        62,
+        224
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "metadata",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_metadata_program",
+          "address": "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "rent",
+          "address": "SysvarRent111111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "mint_init_crystal",
+      "docs": [
+        "Create Crystal Mint"
+      ],
+      "discriminator": [
+        8,
+        249,
+        143,
+        99,
+        158,
+        159,
+        66,
+        187
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "metadata",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_metadata_program",
+          "address": "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "rent",
+          "address": "SysvarRent111111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "mint_init_fuel",
+      "docs": [
+        "Create Fuel Mint"
+      ],
+      "discriminator": [
+        169,
+        55,
+        111,
+        245,
+        191,
+        57,
+        20,
+        88
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "metadata",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_metadata_program",
+          "address": "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "rent",
+          "address": "SysvarRent111111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "mint_init_igt",
+      "docs": [
+        "",
+        "Mints & Tokens",
+        "",
+        "Create IGT Mint"
+      ],
+      "discriminator": [
+        115,
+        242,
+        127,
+        88,
+        239,
+        40,
+        44,
+        201
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  105,
+                  103,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "metadata",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_metadata_program",
+          "address": "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "rent",
+          "address": "SysvarRent111111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "mint_init_metal",
+      "docs": [
+        "Create Metal Mint"
+      ],
+      "discriminator": [
+        100,
+        0,
+        147,
+        152,
+        226,
+        173,
+        21,
+        28
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "metadata",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_metadata_program",
+          "address": "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "rent",
+          "address": "SysvarRent111111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "mint_metal",
+      "docs": [
+        "Mint Metal to X Account"
+      ],
+      "discriminator": [
+        196,
+        191,
+        245,
+        63,
+        169,
+        48,
+        226,
+        45
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "payer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "planet_building_change",
+      "docs": [
+        "Planet - change a building"
+      ],
+      "discriminator": [
+        30,
+        239,
+        159,
+        83,
+        223,
+        173,
+        202,
+        206
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "planet_holding",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  110,
+                  101,
+                  116,
+                  95,
+                  104,
+                  111,
+                  108,
+                  100,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "_x",
+          "type": "u16"
+        },
+        {
+          "name": "_y",
+          "type": "u16"
+        },
+        {
+          "name": "building_type_from",
+          "type": {
+            "defined": {
+              "name": "BuildingType"
+            }
+          }
+        },
+        {
+          "name": "building_type_to",
+          "type": {
+            "defined": {
+              "name": "BuildingType"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "planet_building_new",
+      "docs": [
+        "Planet - build a new building"
+      ],
+      "discriminator": [
+        183,
+        206,
+        12,
+        5,
+        35,
+        96,
+        43,
+        227
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "planet_holding",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  110,
+                  101,
+                  116,
+                  95,
+                  104,
+                  111,
+                  108,
+                  100,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "_x",
+          "type": "u16"
+        },
+        {
+          "name": "_y",
+          "type": "u16"
+        },
+        {
+          "name": "building_type",
+          "type": {
+            "defined": {
+              "name": "BuildingType"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "planet_building_upgrade",
+      "docs": [
+        "Planet - upgrade a building"
+      ],
+      "discriminator": [
+        131,
+        194,
+        6,
+        33,
+        222,
+        157,
+        66,
+        214
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "planet_holding",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  110,
+                  101,
+                  116,
+                  95,
+                  104,
+                  111,
+                  108,
+                  100,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "_x",
+          "type": "u16"
+        },
+        {
+          "name": "_y",
+          "type": "u16"
+        },
+        {
+          "name": "building_type",
+          "type": {
+            "defined": {
+              "name": "BuildingType"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "planet_first_claim",
+      "docs": [
+        "Planet",
+        "",
+        "Planet - First planet claim for new users"
+      ],
+      "discriminator": [
+        94,
+        1,
+        243,
+        98,
+        107,
+        86,
+        95,
+        132
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "planet_info",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  110,
+                  101,
+                  116,
+                  95,
+                  105,
+                  110,
+                  102,
+                  111
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "planet_holding",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  110,
+                  101,
+                  116,
+                  95,
+                  104,
+                  111,
+                  108,
+                  100,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "initial_fleet",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  108,
+                  101,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_info",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_cache",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  99,
+                  97,
+                  99,
+                  104,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "x",
+          "type": "u16"
+        },
+        {
+          "name": "y",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "planet_harvest",
+      "discriminator": [
+        56,
+        136,
+        171,
+        200,
+        73,
+        188,
+        240,
+        62
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "planet_info",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  110,
+                  101,
+                  116,
+                  95,
+                  105,
+                  110,
+                  102,
+                  111
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "planet_holding",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  110,
+                  101,
+                  116,
+                  95,
+                  104,
+                  111,
+                  108,
+                  100,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "arg",
+                "path": "x"
+              },
+              {
+                "kind": "arg",
+                "path": "y"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_info",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_igt",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  105,
+                  103,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_igt",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "mint_igt"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "x",
+          "type": "u16"
+        },
+        {
+          "name": "y",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "player_claim_resource_cache",
+      "discriminator": [
+        42,
+        112,
+        154,
+        19,
+        226,
+        164,
+        52,
+        133
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player_cache",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  99,
+                  97,
+                  99,
+                  104,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_igt",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  105,
+                  103,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_igt",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "mint_igt"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "player_create_resource_account_chemical",
+      "discriminator": [
+        125,
+        191,
+        144,
+        213,
+        79,
+        108,
+        227,
+        98
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_chemical",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "chemical_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  104,
+                  101,
+                  109,
+                  105,
+                  99,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "player_create_resource_account_crystal",
+      "discriminator": [
+        207,
+        87,
+        26,
+        69,
+        22,
+        235,
+        30,
+        40
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_crystal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "crystal_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  99,
+                  114,
+                  121,
+                  115,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "player_create_resource_account_fuel",
+      "discriminator": [
+        161,
+        148,
+        159,
+        220,
+        15,
+        87,
+        240,
+        102
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_fuel",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "fuel_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  102,
+                  117,
+                  101,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "player_create_resource_account_metal",
+      "discriminator": [
+        28,
+        85,
+        240,
+        135,
+        244,
+        170,
+        140,
+        132
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "resource_authority",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  115,
+                  111,
+                  117,
+                  114,
+                  99,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_metal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "metal_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116,
+                  95,
+                  109,
+                  101,
+                  116,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "player_register",
+      "docs": [
+        "Player",
+        "",
+        "Player - Registers a player"
+      ],
+      "discriminator": [
+        56,
+        193,
+        219,
+        93,
+        178,
+        7,
+        171,
+        91
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "player",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint_igt",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  105,
+                  110,
+                  116,
+                  95,
+                  105,
+                  103,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "account_igt",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "signer"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "mint_igt"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "player_cache",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114,
+                  95,
+                  99,
+                  97,
+                  99,
+                  104,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "signer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "player_name",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Fleet",
+      "discriminator": [
+        109,
+        207,
+        251,
+        48,
+        106,
+        2,
+        136,
+        163
+      ]
+    },
+    {
+      "name": "MarketPool",
+      "discriminator": [
+        180,
+        105,
+        154,
+        232,
+        165,
+        224,
+        174,
+        203
+      ]
+    },
+    {
+      "name": "PlanetHolding",
+      "discriminator": [
+        139,
+        93,
+        46,
+        210,
+        226,
+        10,
+        48,
+        0
+      ]
+    },
+    {
+      "name": "PlanetInfo",
+      "discriminator": [
+        127,
+        111,
+        70,
+        126,
+        112,
+        190,
+        84,
+        39
+      ]
+    },
+    {
+      "name": "Player",
+      "discriminator": [
+        205,
+        222,
+        112,
+        7,
+        165,
+        155,
+        206,
+        218
+      ]
+    },
+    {
+      "name": "PlayerCache",
+      "discriminator": [
+        217,
+        146,
+        228,
+        55,
+        161,
+        39,
+        189,
+        187
+      ]
+    },
+    {
+      "name": "ResourceAuthority",
+      "discriminator": [
+        250,
+        108,
+        89,
+        54,
+        188,
+        136,
+        251,
+        247
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "PlanetAlreadySettled",
+      "msg": "Planet is already settled and cannot be claimed"
+    },
+    {
+      "code": 6001,
+      "name": "MaxOneFirstPlanet",
+      "msg": "Player already claimed their first planet"
+    },
+    {
+      "code": 6002,
+      "name": "NoPlanetAtCoordinates",
+      "msg": "Invalid planet coordinates"
+    },
+    {
+      "code": 6003,
+      "name": "NoAuthority",
+      "msg": "No authority over this planet)"
+    }
+  ],
+  "types": [
+    {
+      "name": "BattlePresence",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Active"
+          },
+          {
+            "name": "Retreating"
+          },
+          {
+            "name": "Gone"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Building",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "level",
+            "type": "u8"
+          },
+          {
+            "name": "building_type",
+            "type": {
+              "defined": {
+                "name": "BuildingType"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuildingType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "None"
+          },
+          {
+            "name": "PlanetaryCapital"
+          },
+          {
+            "name": "Shipyard"
+          },
+          {
+            "name": "MetalIndustry"
+          },
+          {
+            "name": "CrystalLabs"
+          },
+          {
+            "name": "ChemicalRefinery"
+          },
+          {
+            "name": "FuelExtractors"
+          },
+          {
+            "name": "TradeBeacon"
+          },
+          {
+            "name": "AstralNavyHQ"
+          },
+          {
+            "name": "Infrastructure"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fleet",
+      "docs": [
+        "Fleet occupying (x, y) position"
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "is_present",
+            "type": "bool"
+          },
+          {
+            "name": "squadrons",
+            "type": {
+              "array": [
+                {
+                  "option": {
+                    "defined": {
+                      "name": "Squadron"
+                    }
+                  }
+                },
+                9
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketPool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "assets",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Morale",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Normal"
+          },
+          {
+            "name": "Broken"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlanetHolding",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "last_harvest",
+            "type": "u64"
+          },
+          {
+            "name": "buildings",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "Building"
+                  }
+                },
+                6
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlanetInfo",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "metal",
+            "type": "u16"
+          },
+          {
+            "name": "chemical",
+            "type": "u16"
+          },
+          {
+            "name": "crystal",
+            "type": "u16"
+          },
+          {
+            "name": "fuel",
+            "type": "u16"
+          },
+          {
+            "name": "miner",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "owner",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Player",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "settled_planets",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerCache",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "resources",
+            "type": {
+              "defined": {
+                "name": "Resources"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ResourceAuthority",
+      "type": {
+        "kind": "struct",
+        "fields": []
+      }
+    },
+    {
+      "name": "Resources",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "igt",
+            "type": "u64"
+          },
+          {
+            "name": "metal",
+            "type": "u64"
+          },
+          {
+            "name": "crystal",
+            "type": "u64"
+          },
+          {
+            "name": "chemical",
+            "type": "u64"
+          },
+          {
+            "name": "fuel",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShipModule",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "module_type",
+            "type": {
+              "defined": {
+                "name": "ShipModuleType"
+              }
+            }
+          },
+          {
+            "name": "level",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShipModuleType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "None"
+          },
+          {
+            "name": "Rockets"
+          },
+          {
+            "name": "MachineGun"
+          },
+          {
+            "name": "Lasers"
+          },
+          {
+            "name": "HardenedHull"
+          },
+          {
+            "name": "ShieldBooster"
+          },
+          {
+            "name": "AdditionalArmor"
+          },
+          {
+            "name": "HaulingBay"
+          },
+          {
+            "name": "TargetingSystems"
+          },
+          {
+            "name": "MiningDrill"
+          },
+          {
+            "name": "LandingPods"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Squadron",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "template",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "ShipModule"
+                  }
+                },
+                6
+              ]
+            }
+          },
+          {
+            "name": "amount",
+            "type": "u16"
+          },
+          {
+            "name": "morale",
+            "type": {
+              "defined": {
+                "name": "Morale"
+              }
+            }
+          },
+          {
+            "name": "presence",
+            "type": {
+              "defined": {
+                "name": "BattlePresence"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SquadronBlueprint",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "template",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "ShipModule"
+                  }
+                },
+                6
+              ]
+            }
+          },
+          {
+            "name": "amount",
+            "type": "u16"
+          }
+        ]
+      }
+    }
+  ]
+}
