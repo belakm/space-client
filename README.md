@@ -1,5 +1,7 @@
 # space-client
 
+This project is a test client for [space_game](https://github.com/belakm/space_game) project.
+
 This project is generated with the [create-solana-dapp](https://github.com/solana-developers/create-solana-dapp) generator.
 
 ## Getting Started
